@@ -17,3 +17,4 @@
    }
    delay(10); // Wait 10 milliseconds for next reading
 }
+//https://learn.sparkfun.com/tutorials/connecting-arduino-to-processing/all#shaking-hands-part-2
