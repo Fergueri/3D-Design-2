@@ -19,8 +19,8 @@ int servoState = servo.read();
      servo.attach(servoPin);
      delay(10);//delay to give time for motor
      servo.write(360);
-     delay(10);//delay to give time for motor
-   } else {
+     delay(10);//delay to give time for motor i noticed that this needed a very small delay to actually work
+   } else { //otherwise
      servo.write(0);
      delay(10);//delay to give time for motor
      
