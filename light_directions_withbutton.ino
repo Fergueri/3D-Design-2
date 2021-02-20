@@ -1,11 +1,11 @@
-
+//this code didnt quite work
 #include <Adafruit_NeoPixel.h>
 #define PIN 2
 #define NUMPIXELS 4
 const int buttonPin1 = 5;
 const int buttonPin2 = 6;
-int buttonState1 = 0
-int buttonState2 = 0
+int buttonState1 = 0; //initalize the button 1
+int buttonState2 = 0; //initalize the button 2
 Adafruit_NeoPixel strip(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
 
 void setup() {
@@ -13,17 +13,17 @@ void setup() {
   strip.begin();
   strip.setBrightness(50);
   strip.show();
-  pinMode(buttonPin1, INPUT);
+  pinMode(buttonPin1, INPUT); //checks if button is input or output
   pinMode(buttonPin2, INPUT);
 }
 
 void loop() {
-  buttonState = digitalRead(buttonPin);
-  if(buttonState1 == 1){
+  buttonState = digitalRead(buttonPin);//made an 
+  if(buttonState1 == 1){//if the button is clicked switch the way the light goes
     right();  
   }
- if(buttonState1 == 1){
-    right();  
+ if(buttonState2 == 1){//if the button is clicked switch the way the light goes
+    left();  
   }
 
 }
@@ -41,14 +41,14 @@ void left() {
 }
 
 
-void colorWipe2(uint32_t c, uint8_t wait){
+void colorWipe2(uint32_t c, uint8_t wait){ //backwards light code
   for(uint32_t i=4; i<=4; i--) {
     strip.setPixelColor(i, c);
     strip.show();
     delay(wait);
   }  
 }
-void colorWipe1(uint32_t c, uint8_t wait){
+void colorWipe1(uint32_t c, uint8_t wait){ //forwards code
   for(uint32_t i=0; i<strip.numPixels; i++) {
     strip.setPixelColor(i, c);
     strip.show();
