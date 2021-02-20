@@ -23,7 +23,7 @@ void loop() {
 }
 
 void colorWipe(uint32_t c, uint8_t wait){
-  for(uint32_t i=4; i<4; i--) {
+  for(uint32_t i=4; i<4; i--) { //i changed the code to go backwards and count down instead of up
     strip.setPixelColor(i, c);
     strip.show();
     delay(250);
